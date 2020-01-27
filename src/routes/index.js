@@ -23,7 +23,7 @@ export const router = new VueRouter({
        component:AskView,
    },
    {
-    path: '/job',
+    path: '/jobs',
     component: JobsView,
     },
 

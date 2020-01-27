@@ -39,4 +39,69 @@ ES6 이해도
 
   mounted() 되고 나서 데이터를 요청을 하거나 , 배열에 데이터를 넣게 된다면 
   vue의 reative 시스템 때문에 화면이 다시 그려지게 됨  
-     
+  
+
+  # javascript this 객체 
+  - 전역 this 
+  ex)  var a = 10 ;
+        a는 window.a  객체가 됨 
+        this; 을 호출 하면 전역 window 객체 라는 것을 볼수 있음 
+
+  - 함수내 this 
+   ex) function sum(a, b) { 
+     console.log(this); 
+     return a +b; 
+   }
+   sum(10,20) 호출시 결과물
+    :   window 객체를  console.log를 찍고 30을 return 함 
+    함수내에서도 this는 전역 변수를 가르킴 
+ - 생성자 함수 
+  ex) function Vue(el) { 
+      console.log(this);
+      this.el = el;
+      }
+
+      new Vue('#app')이라고 호출시 
+       :  Vue {} 전역변수가 아닌 생성자 함수를 자체를 가르킴 
+
+  - 비동기 처리의 this 
+    ex)  @/views/NewView.vue에 참조;;  
+     호출 하는 시점에서 this가 달라짐 
+     var vm = this; 라는 데이터 바이딩 처리를 하거나
+     화살표 함수를 사용해야함
+
+%% 콜백함수 
+  javascript에선 인자를 함수로 넘길수가 있음. 이를 callback 함수라고 함 
+%%Promise 객체 
+ Promise 객체에 resolve와 reject를 받아와 사용하는 로직을 추가해줘야  then이나 catch 문을 추가하는 재사용 로직이 됨 
+ ''' 
+ex)  ..
+function callAjax() {
+return new Promise(function(resolve, reject){
+  $.ajax({
+    url:'https://api.hnpwa.com/v0/news/1.json'
+    success: function(data){
+        resolve(data);
+    }  
+  });
+})
+}
+.. 
+function fecthData() {
+ .. 
+ var result =[];
+ callAjax().then(function(data){
+   console.log('데이터 호출 결과 ', data); 
+   result = data;
+   console.log('함수 결과', result); 
+ })
+}
+'''
+- Promise는 chaining 이 가능함 
+
+# vuex를 사용하여 상태 관리 
+vuex 적용전 
+newsView <- api 
+vuex 적용 
+newsView <-vuex <- api
+api 데이터를 vuex state라는 상태에 담아서 화면에 전달 

@@ -105,3 +105,7 @@ newsView <- api
 vuex 적용 
 newsView <-vuex <- api
 api 데이터를 vuex state라는 상태에 담아서 화면에 전달 
+
+
+actions :  BackEnd Api에서 mutation으로 넘기주기 위한 속성 
+vuex에서 Actions을 통해 비동기화 처리를 하게 되고 Mutations을 통해 State로 데이터를 넘기도록 되어 있음 

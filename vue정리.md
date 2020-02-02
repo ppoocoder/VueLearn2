@@ -111,3 +111,30 @@ actions :  BackEnd Api에서 mutation으로 넘기주기 위한 속성
 vuex에서 Actions을 통해 비동기화 처리를 하게 되고 Mutations을 통해 State로 데이터를 넘기도록 되어 있음 
 
 %%  computed: 하위 비즈니스 로직 처리 구현 created 다음으로 화면 view 객체가 뿌려질때 동작하는 로직 선언 가능 
+
+
+
+# 
+ 1. itemVIew 샏성
+ 2. 라우터에 ItemView로 갈수 있는 라우터 정보를 등록
+ {
+   path: '' 
+   component: ,
+ }
+
+ 3. 해당 페이지 컴포넌트로 이동 했을 때 받아온 params(id)를 이용해서 페이지 데이터를 표시 
+   create() {
+     this.$store.dispathch(') 
+   }
+
+  # v-html Directive 
+    https://vuejs.org/v2/api/#v-html 
+    https://vuejs.org/v2/guide/syntax.html#Raw-HTML
+  
+
+  # 라우터 트렌지션 - vue 내부적으로 제공하는 router 트렌지션 기능
+     https://fontawesome.com/icons/user?style=solid
+      
+      router-view에  <transition>을 감쌈 
+     
+

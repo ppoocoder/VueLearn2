@@ -10,11 +10,16 @@ export const store = new Vuex.Store({
     state: { 
          news: [], 
          ask:[],
-         jobs:[]
+         jobs:[],
+         user:{},
+         item:{},
     },
     getters: {
       fetchedAsk(state){
               return state.ask;
+      },
+      fetchedItem(state) { 
+              return state.item;
       }      
     },
     // store 속성 모듈화 
